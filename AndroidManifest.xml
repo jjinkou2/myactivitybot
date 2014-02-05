@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kenichikato.myactivitybot"
+    android:versionCode="2"
+    android:versionName="1.1.1" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.kenichikato.myactivitybot.MyActivityBot"
+            android:windowSoftInputMode="stateHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:configChanges="orientation|keyboardHidden"
+            android:name="com.kenichikato.myactivitybot.DeviceListActivity"
+            android:label="@string/title_activity_device_list"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Bluetooth Permission Request"
+            android:name="android.bluetooth.RequestEnableActivity"
+            android:noHistory="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter >
+                <action android:name="com.kenichikato.myactivitybot.action.REQUEST_ENABLE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

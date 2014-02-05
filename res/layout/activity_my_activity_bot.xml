@@ -1,0 +1,171 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MyActivityBot" >
+
+    <ImageButton
+        android:id="@+id/offBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:onClick="onClickOffBtn"
+        android:src="@drawable/off_button" />
+
+    <ImageButton
+        android:id="@+id/onBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:onClick="onClickOnBtn"
+        android:src="@drawable/on_button"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/leftOffPix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/offBtn"
+        android:layout_marginBottom="62dp"
+        android:layout_marginRight="24dp"
+        android:layout_toLeftOf="@+id/offBtn"
+        android:src="@drawable/left_off" />
+
+    <ImageView
+        android:id="@+id/rightOffPix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/leftOffPix"
+        android:layout_marginLeft="32dp"
+        android:layout_toRightOf="@+id/offBtn"
+        android:src="@drawable/right_off" />
+
+    <ImageView
+        android:id="@+id/forwardOffPix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:src="@drawable/forward_off" />
+
+    <ImageView
+        android:id="@+id/rightOnPix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rightOffPix"
+        android:layout_alignTop="@+id/rightOffPix"
+        android:src="@drawable/right_on"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/forwardOnPix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/forwardOffPix"
+        android:layout_alignTop="@+id/forwardOffPix"
+        android:src="@drawable/forward_on"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/leftOnPix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/leftOffPix"
+        android:layout_alignTop="@+id/leftOffPix"
+        android:src="@drawable/left_on"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/lab_xPos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/offBtn"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="25dp"
+        android:text="X Pos:"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/tv_xPos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/green"
+        android:layout_alignBaseline="@+id/lab_xPos"
+        android:layout_alignBottom="@+id/lab_xPos"
+        android:layout_alignLeft="@+id/forwardOffPix"
+        android:text="none"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/lab_yPos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_alignRight="@+id/lab_xPos"
+        android:layout_below="@+id/lab_xPos"
+        android:text="Y Pos:"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/tv_yPos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue"
+        android:layout_alignBaseline="@+id/lab_yPos"
+        android:layout_alignBottom="@+id/lab_yPos"
+        android:layout_alignLeft="@+id/tv_xPos"
+        android:text="none"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/lab_zPos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_alignRight="@+id/lab_yPos"
+        android:layout_below="@+id/lab_yPos"
+        android:text="Z Pos:"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/tv_zPos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/maroon"
+        android:layout_alignBaseline="@+id/lab_zPos"
+        android:layout_alignBottom="@+id/lab_zPos"
+        android:layout_alignLeft="@+id/tv_yPos"
+        android:text="none"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_xPos"
+        android:layout_alignLeft="@+id/lab_xPos"
+        android:text="Debug Info:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="italic" />
+
+    <ImageButton
+        android:id="@+id/bluetoothBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBTBtn"
+        android:layout_alignLeft="@+id/rightOffPix"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="19dp"
+        android:src="@drawable/bluetooth_icon" />
+    
+</RelativeLayout>
